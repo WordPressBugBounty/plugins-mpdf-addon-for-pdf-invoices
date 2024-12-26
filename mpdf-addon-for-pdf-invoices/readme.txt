@@ -1,11 +1,11 @@
 === mPDF add-on for RTL and Unicode Support ===
 Contributors: WebToffee
-Version: 1.2.3
+Version: 1.2.4
 Donate link: https://www.webtoffee.com/plugins/
 Tags: woocommerce, pdf, mpdf, gift card, rtl support, invoice, order, print, packing slip, packing list, shipping label, delivery note, dispatch label, request a quote
 Requires at least: 3.0.1
-Tested up to: 6.6
-Stable tag: 1.2.3
+Tested up to: 6.7
+Stable tag: 1.2.4
 Requires PHP: 5.6 
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -93,6 +93,10 @@ Note:
 
 == Change log ==
 
+= 1.2.4 2024-12-26 =
+[Compatibility] - Tested OK with WordPress 6.7.
+[Compatibility] - Tested OK with WooCommerce 9.5.1
+
 = 1.2.3 2024-09-19 =
 * [Fix] - Fatal error comes when parent node does not have children
 * [Fix] - NullLogger was not compatible with the LoggerInterface in Psr\log
@@ -170,7 +174,6 @@ Note:
  
 == Upgrade Notice ==
 
-= 1.2.3 2024-09-19 =
-* [Fix] - Fatal error comes when parent node does not have children
-* [Fix] - NullLogger was not compatible with the LoggerInterface in Psr\log
-* [Compatibility] - Tested OK with WooCommerce v9.3.0
+= 1.2.4 =
+[Compatibility] - Tested OK with WordPress 6.7.
+[Compatibility] - Tested OK with WooCommerce 9.5.1

@@ -6557,7 +6557,7 @@ class Mpdf implements \Psr\Log\LoggerAwareInterface
 			$lastfontreqstyle = null;
 			$lastfontstyle = null;
 		}
-		if ($blockdir == 'ltr' && strpos($lastfontreqstyle, "I") !== false && strpos($lastfontstyle, "I") === false) { // Artificial italic
+		if (!empty( $lastfontreqstyle ) && !empty( $lastfontstyle ) &&  $blockdir == 'ltr' && strpos($lastfontreqstyle, "I") !== false && strpos($lastfontstyle, "I") === false) { // Artificial italic
 			$lastitalic = $this->FontSize * 0.15 * Mpdf::SCALE;
 		} else {
 			$lastitalic = 0;

@@ -1363,7 +1363,7 @@ class CssManager
 				if (((string) $key) === ((string) ((int) $key))) { // integer or string as integer key - append
 					$ret[] = $value;
 				} else { // string key - merge
-					if (is_array($value) && isset($ret[$key])) {
+					if ( is_array( $value ) && isset( $ret[$key] ) && is_array( $ret[$key] ) ) {
 						$ret[$key] = $this->array_merge_recursive_unique($ret[$key], $value);
 					} else {
 						$ret[$key] = $value;
