@@ -1050,7 +1050,8 @@ abstract class BlockTag extends Tag
 		$currpos = $this->mpdf->page * 1000 + $this->mpdf->y;
 		if (isset($this->mpdf->blk[$this->mpdf->blklvl]['float_endpos']) && $this->mpdf->blk[$this->mpdf->blklvl]['float_endpos'] > $currpos) {
 			$old_page = $this->mpdf->page;
-			$new_page = (int) ($this->mpdf->blk[$this->mpdf->blklvl]['float_endpos'] / 1000);
+			$float_endpos = $this->mpdf->blk[$this->mpdf->blklvl]['float_endpos'];
+			$new_page = (int) ($float_endpos / 1000);
 			if ($old_page != $new_page) {
 				$s = $this->mpdf->PrintPageBackgrounds();
 				// Writes after the marker so not overwritten later by page background etc.
@@ -1066,7 +1067,7 @@ abstract class BlockTag extends Tag
 				$this->mpdf->pageoutput[$this->mpdf->page] = [];
 			}
 			// mod changes operands to integers before processing
-			$this->mpdf->y = (($this->mpdf->blk[$this->mpdf->blklvl]['float_endpos'] * 1000) % 1000000) / 1000;
+			$this->mpdf->y = fmod(($float_endpos * 1000.0), 1000000.0) / 1000.0;
 		}
 		/* -- END CSS-FLOAT -- */
 

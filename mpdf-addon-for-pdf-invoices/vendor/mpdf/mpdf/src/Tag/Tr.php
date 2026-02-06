@@ -33,9 +33,9 @@ class Tr extends Tag
 			}
 		}
 
-		if (isset($properties['BACKGROUND-COLOR'])) {
+		if (isset($properties['BACKGROUND-COLOR']) && is_array($this->mpdf->table[$this->mpdf->tableLevel][$this->mpdf->tbctr[$this->mpdf->tableLevel]]['bgcolor'])) {
 			$this->mpdf->table[$this->mpdf->tableLevel][$this->mpdf->tbctr[$this->mpdf->tableLevel]]['bgcolor'][$this->mpdf->row] = $properties['BACKGROUND-COLOR'];
-		} elseif (isset($attr['BGCOLOR'])) {
+		} elseif (isset($attr['BGCOLOR']) && is_array($this->mpdf->table[$this->mpdf->tableLevel][$this->mpdf->tbctr[$this->mpdf->tableLevel]]['bgcolor'])) {
 			$this->mpdf->table[$this->mpdf->tableLevel][$this->mpdf->tbctr[$this->mpdf->tableLevel]]['bgcolor'][$this->mpdf->row] = $attr['BGCOLOR'];
 		}
 

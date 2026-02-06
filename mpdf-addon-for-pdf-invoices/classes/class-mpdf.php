@@ -67,7 +67,7 @@ class Wt_Pklist_Mpdf
 
         $mpdf_water_mark=array(
             'status'=>false,
-            'text'=>__('Recieved', 'mpdf-addon-for-woocommerce-pdf-invoices')
+            'text'=>__('Recieved', 'mpdf-addon-for-pdf-invoices')
         );
         $mpdf_water_mark=apply_filters('wt_pklist_mpdf_water_mark', $mpdf_water_mark);
         ob_start();
@@ -77,7 +77,7 @@ class Wt_Pklist_Mpdf
                 $this->mpdf->WriteHTML($actual_html);
                 if(is_array($mpdf_water_mark) && isset($mpdf_water_mark['status']) && $mpdf_water_mark['status']===true)
                 {
-                    $text=(isset($mpdf_water_mark['text']) ? $mpdf_water_mark['text'] : __('Recieved', 'mpdf-addon-for-woocommerce-pdf-invoices'));
+                    $text=(isset($mpdf_water_mark['text']) ? $mpdf_water_mark['text'] : __('Recieved', 'mpdf-addon-for-pdf-invoices'));
 
                     $this->mpdf->SetWatermarkText($text);
                     $this->mpdf->showWatermarkText = true;

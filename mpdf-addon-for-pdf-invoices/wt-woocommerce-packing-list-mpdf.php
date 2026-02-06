@@ -11,14 +11,14 @@
  * Plugin URI:        https://wordpress.org/plugins/mpdf-addon-for-pdf-invoices/
  * Requires Plugins:  woocommerce
  * Description:       mPDF add-on for WooCommerce PDF Invoices, Packing Slips, Delivery Notes & Shipping Labels
- * Version:           1.2.5
+ * Version:           1.2.7
  * Author:            WebToffee
  * Author URI:        https://www.webtoffee.com/
- * License:           GPL-2.0+
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ * License:           GPL-3.0+
+ * License URI:       http://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain:       mpdf-addon-for-pdf-invoices
  * Domain Path:       /languages
- * WC tested up to:   9.8.5
+ * WC tested up to:   10.3.5
  */
 
 // If this file is called directly, abort.
@@ -53,33 +53,44 @@ if(!function_exists('activate_wt_woocommerce_packing_list_mpdf'))
 		* 
 		* 	@since 	1.0.7 	Checking added for Gift cards plugin. 
 		*/
+
 		if((!is_plugin_active('wt-woocommerce-packing-list/wf-woocommerce-packing-list.php')  
+			&& !is_plugin_active('wt-pdf-invoices-suite/wf-woocommerce-packing-list.php')
 			&& !is_plugin_active('print-invoices-packing-slip-labels-for-woocommerce/print-invoices-packing-slip-labels-for-woocommerce.php') 
 			&& !is_plugin_active('wt-woocommerce-gift-cards/wt-woocommerce-gift-cards.php')
 			&& !is_plugin_active('wt-gift-cards-woocommerce/wt-gift-cards-woocommerce.php')
 			&& !is_plugin_active('wt-woo-request-quote/wt-woo-request-quote.php')) 
-			&& !isset($_GET['wt_pklist_mpdf_force_activate']))
+			&& !isset($_GET['wt_pklist_mpdf_force_activate'])) //phpcs:ignore WordPress.Security.NonceVerification.Recommended
 		{
-			$get_arr=array_map('sanitize_text_field', $_GET);
+			$get_arr=array_map('sanitize_text_field', $_GET); //phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			$continue_url=admin_url("plugins.php?".http_build_query($get_arr).'&wt_pklist_mpdf_force_activate=1');
 			$skip_url=admin_url("plugins.php");
 			$download_url='https://wordpress.org/plugins/print-invoices-packing-slip-labels-for-woocommerce/';
 			$gc_download_url='https://www.webtoffee.com/product/woocommerce-gift-cards/';
 			$wtwraq_download_url='https://www.webtoffee.com/product/woocommerce-request-a-quote/';
+			$woo_invoice_suite_download_url='https://woocommerce.com/products/wt-pdf-invoices-suite/';
 			
-
-			$str=sprintf(__("%s The plugin is an addon for the `WooCommerce PDF Invoice by WebToffee`, `WebToffee WooCommerce Gift Cards`, `WebToffee WooCommerce Request a Quote` and currently works only with these plugins. %s", "mpdf-addon-for-woocommerce-pdf-invoices"), '<span style="font-weight:bold; font-size:16px; display:inline-block; margin-bottom:15px;">', '</span>');
+			/* translators: 1$s: HTML span opening tag, 2$s: HTML span closing tag */
+			$str=sprintf(__('%1$s The plugin is an addon for the WooCommerce PDF Invoice by WebToffee, WebToffee WooCommerce Gift Cards, WebToffee WooCommerce Request a Quote, and WooCommerce PDF Invoice Suite and currently works only with these plugins. %2$s', 'mpdf-addon-for-pdf-invoices'), '<span style="font-weight:bold; font-size:16px; display:inline-block; margin-bottom:15px;">', '</span>');
 			$str.='<br />';
-			$str.=sprintf(__('%s Continue activation %s', "mpdf-addon-for-woocommerce-pdf-invoices"), '<a href="'.esc_attr($continue_url).'">', '</a>');
+			/* translators: 1$s: HTML anchor opening tag, 2$s: HTML anchor closing tag */
+			$str.=sprintf(__('%1$s Continue activation %2$s', 'mpdf-addon-for-pdf-invoices'), '<a href="'.esc_attr($continue_url).'">', '</a>');
 			$str.='&nbsp; | &nbsp;';
-			$str.=sprintf(__('%s Skip activation %s', "mpdf-addon-for-woocommerce-pdf-invoices"), '<a href="'.esc_attr($skip_url).'">', '</a>');
+			/* translators: 1$s: HTML anchor opening tag, 2$s: HTML anchor closing tag */
+			$str.=sprintf(__('%1$s Skip activation %2$s', 'mpdf-addon-for-pdf-invoices'), '<a href="'.esc_attr($skip_url).'">', '</a>');
 			$str.='&nbsp; | &nbsp;';
-			$str.=sprintf(__('%s Download WooCommerce PDF Invoice by WebToffee %s', "mpdf-addon-for-woocommerce-pdf-invoices"), '<a href="'.esc_attr($download_url).'" target="_blank">', '</a>');
+			/* translators: 1$s: HTML anchor opening tag, 2$s: HTML anchor closing tag */
+			$str.=sprintf(__('%1$s Download WooCommerce PDF Invoice by WebToffee %2$s', 'mpdf-addon-for-pdf-invoices'), '<a href="'.esc_attr($download_url).'" target="_blank">', '</a>');
 			$str.='&nbsp; | &nbsp;';
-			$str.=sprintf(__('%s Download WebToffee WooCommerce Gift Cards %s', "mpdf-addon-for-woocommerce-pdf-invoices"), '<a href="'.esc_attr($gc_download_url).'" target="_blank">', '</a>');
+			/* translators: 1$s: HTML anchor opening tag, 2$s: HTML anchor closing tag */
+			$str.=sprintf(__('%1$s Download WebToffee WooCommerce Gift Cards %2$s', 'mpdf-addon-for-pdf-invoices'), '<a href="'.esc_attr($gc_download_url).'" target="_blank">', '</a>');
 			$str.='&nbsp; | &nbsp;';
-			$str.=sprintf(__('%s Download WebToffee WooCommerce Request a Quote %s', "mpdf-addon-for-woocommerce-pdf-invoices"), '<a href="'.esc_attr($wtwraq_download_url).'" target="_blank">', '</a>');
-			wp_die($str);
+			/* translators: 1$s: HTML anchor opening tag, 2$s: HTML anchor closing tag */
+			$str.=sprintf(__('%1$s Download WebToffee WooCommerce Request a Quote %2$s', 'mpdf-addon-for-pdf-invoices'), '<a href="'.esc_attr($wtwraq_download_url).'" target="_blank">', '</a>');
+			$str.='&nbsp; | &nbsp;';
+			/* translators: 1$s: HTML anchor opening tag, 2$s: HTML anchor closing tag */
+			$str.=sprintf(__('%1$s Download WooCommerce PDF Invoice Suite %2$s', 'mpdf-addon-for-pdf-invoices'), '<a href="'.esc_attr($woo_invoice_suite_download_url).'" target="_blank">', '</a>');
+			wp_die(wp_kses_post($str));
 		}
 	}
 }
@@ -87,6 +98,7 @@ if(!function_exists('activate_wt_woocommerce_packing_list_mpdf'))
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
 if(!is_plugin_active('wt-woocommerce-packing-list/wf-woocommerce-packing-list.php')  
+	&& !is_plugin_active('wt-pdf-invoices-suite/wf-woocommerce-packing-list.php')
 	&& !is_plugin_active('print-invoices-packing-slip-labels-for-woocommerce/print-invoices-packing-slip-labels-for-woocommerce.php') 
 	&& !is_plugin_active('wt-woocommerce-gift-cards/wt-woocommerce-gift-cards.php')
 	&& !is_plugin_active('wt-gift-cards-woocommerce/wt-gift-cards-woocommerce.php')
@@ -94,6 +106,7 @@ if(!is_plugin_active('wt-woocommerce-packing-list/wf-woocommerce-packing-list.ph
 {
 	return;
 }
+
 
 if(!defined('WT_PKLIST_MPDF_VERSION')) //check plugin file already included
 {
@@ -108,7 +121,7 @@ if(!defined('WT_PKLIST_MPDF_VERSION')) //check plugin file already included
     /**
      * Currently plugin version.
      */
-    define( 'WT_PKLIST_MPDF_VERSION', '1.2.5' );
+    define( 'WT_PKLIST_MPDF_VERSION', '1.2.7' );
 }else
 {
 	return;
@@ -137,7 +150,8 @@ if(!class_exists('Wt_Pklist_Mpdf_Addon'))
 			/**
 			 * Invoice plugin related functionalities. Checks invoice plugins (Pro, Basic) are active
 			 */
-			if(is_plugin_active('wt-woocommerce-packing-list/wf-woocommerce-packing-list.php')  
+			if(is_plugin_active('wt-woocommerce-packing-list/wf-woocommerce-packing-list.php') 
+			|| is_plugin_active('wt-pdf-invoices-suite/wf-woocommerce-packing-list.php')
 			|| is_plugin_active('print-invoices-packing-slip-labels-for-woocommerce/print-invoices-packing-slip-labels-for-woocommerce.php'))
 			{
 				add_action('plugins_loaded', array($this, 'init'));

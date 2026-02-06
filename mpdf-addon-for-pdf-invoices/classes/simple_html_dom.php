@@ -199,12 +199,12 @@ class simple_html_dom_node
 
 	function dump($show_attr = true, $depth = 0)
 	{
-		echo str_repeat("\t", $depth) . $this->tag;
+		echo str_repeat("\t", $depth) . $this->tag; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 		if ($show_attr && count($this->attr) > 0) {
 			echo '(';
 			foreach ($this->attr as $k => $v) {
-				echo "[$k]=>\"$v\", ";
+				echo "[$k]=>\"$v\", "; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 			echo ')';
 		}
@@ -264,7 +264,7 @@ class simple_html_dom_node
 		$string .= "\n";
 
 		if ($echo) {
-			echo $string;
+			echo $string; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			return;
 		} else {
 			return $string;

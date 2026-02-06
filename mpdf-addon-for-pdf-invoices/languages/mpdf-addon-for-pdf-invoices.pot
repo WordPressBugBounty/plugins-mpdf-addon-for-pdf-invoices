@@ -1,0 +1,171 @@
+# Copyright (C) 2025 WebToffee
+# This file is distributed under the GPL-3.0+.
+msgid ""
+msgstr ""
+"Project-Id-Version: mPDF addon for PDF Invoices 1.2.7\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mpdf-addon-for-pdf-invoices\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-11-18T06:15:53+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.10.0\n"
+"X-Domain: mpdf-addon-for-pdf-invoices\n"
+
+#. Plugin Name of the plugin
+#: wt-woocommerce-packing-list-mpdf.php
+msgid "mPDF addon for PDF Invoices"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: wt-woocommerce-packing-list-mpdf.php
+msgid "https://wordpress.org/plugins/mpdf-addon-for-pdf-invoices/"
+msgstr ""
+
+#. Description of the plugin
+#: wt-woocommerce-packing-list-mpdf.php
+msgid "mPDF add-on for WooCommerce PDF Invoices, Packing Slips, Delivery Notes & Shipping Labels"
+msgstr ""
+
+#. Author of the plugin
+#: wt-woocommerce-packing-list-mpdf.php
+msgid "WebToffee"
+msgstr ""
+
+#. Author URI of the plugin
+#: wt-woocommerce-packing-list-mpdf.php
+msgid "https://www.webtoffee.com/"
+msgstr ""
+
+#: classes/class-mpdf.php:70
+#: classes/class-mpdf.php:80
+msgid "Recieved"
+msgstr ""
+
+#. translators: 1$s: HTML bold opening tag, 2$s: HTML bold closing tag
+#: includes/class-wt-mpdf-review_request.php:64
+msgid "Hey, we at %1$s WebToffee %2$s would like to thank you for using our plugin. We would really appreciate if you could take a moment to drop a quick review that will inspire us to keep going."
+msgstr ""
+
+#: includes/class-wt-mpdf-review_request.php:65
+msgid "Remind me later"
+msgstr ""
+
+#: includes/class-wt-mpdf-review_request.php:66
+msgid "Not interested"
+msgstr ""
+
+#: includes/class-wt-mpdf-review_request.php:67
+msgid "Review now"
+msgstr ""
+
+#: includes/class-wt-mpdf-uninstall-feedback.php:37
+msgid "Language support issues"
+msgstr ""
+
+#: includes/class-wt-mpdf-uninstall-feedback.php:39
+msgid "Which language?"
+msgstr ""
+
+#: includes/class-wt-mpdf-uninstall-feedback.php:43
+msgid "I found a better plugin"
+msgstr ""
+
+#: includes/class-wt-mpdf-uninstall-feedback.php:45
+msgid "Which plugin?"
+msgstr ""
+
+#: includes/class-wt-mpdf-uninstall-feedback.php:49
+msgid "The plugin is great, but I need specific feature that you don't support"
+msgstr ""
+
+#: includes/class-wt-mpdf-uninstall-feedback.php:51
+msgid "Could you tell us more about that feature?"
+msgstr ""
+
+#. translators: 1$s: HTML anchor opening tag, 2$s: HTML anchor closing tag
+#: includes/class-wt-mpdf-uninstall-feedback.php:56
+msgid "Plugin does not work as expected."
+msgstr ""
+
+#. translators: 1$s: HTML anchor opening tag, 2$s: HTML anchor closing tag
+#: includes/class-wt-mpdf-uninstall-feedback.php:56
+msgid " %1$s WooCommerce PDF Invoices by WebToffee %2$s plugin is already active."
+msgstr ""
+
+#: includes/class-wt-mpdf-uninstall-feedback.php:58
+msgid "The mPDF plugin is strictly an add-on for the WooCommerce PDF Invoices by WebToffee plugin. Assuming that this plugin is also active, please share more info regarding the issue."
+msgstr ""
+
+#: includes/class-wt-mpdf-uninstall-feedback.php:62
+msgid "Other"
+msgstr ""
+
+#: includes/class-wt-mpdf-uninstall-feedback.php:64
+msgid "Could you tell us a bit more?"
+msgstr ""
+
+#: includes/class-wt-mpdf-uninstall-feedback.php:83
+msgid "If you have a moment, please let us know why you are deactivating:"
+msgstr ""
+
+#: includes/class-wt-mpdf-uninstall-feedback.php:100
+msgid "We do not collect any personal data when you submit this form. It's your feedback that we value."
+msgstr ""
+
+#: includes/class-wt-mpdf-uninstall-feedback.php:101
+msgid "Privacy Policy"
+msgstr ""
+
+#: includes/class-wt-mpdf-uninstall-feedback.php:107
+msgid "Go to support"
+msgstr ""
+
+#: includes/class-wt-mpdf-uninstall-feedback.php:108
+msgid "Submit & Deactivate"
+msgstr ""
+
+#: includes/class-wt-mpdf-uninstall-feedback.php:109
+msgid "Cancel"
+msgstr ""
+
+#: includes/class-wt-mpdf-uninstall-feedback.php:110
+msgid "I rather wouldn't say"
+msgstr ""
+
+#. translators: 1$s: HTML span opening tag, 2$s: HTML span closing tag
+#: wt-woocommerce-packing-list-mpdf.php:74
+msgid "%1$s The plugin is an addon for the WooCommerce PDF Invoice by WebToffee, WebToffee WooCommerce Gift Cards, WebToffee WooCommerce Request a Quote, and WooCommerce PDF Invoice Suite and currently works only with these plugins. %2$s"
+msgstr ""
+
+#. translators: 1$s: HTML anchor opening tag, 2$s: HTML anchor closing tag
+#: wt-woocommerce-packing-list-mpdf.php:77
+msgid "%1$s Continue activation %2$s"
+msgstr ""
+
+#. translators: 1$s: HTML anchor opening tag, 2$s: HTML anchor closing tag
+#: wt-woocommerce-packing-list-mpdf.php:80
+msgid "%1$s Skip activation %2$s"
+msgstr ""
+
+#. translators: 1$s: HTML anchor opening tag, 2$s: HTML anchor closing tag
+#: wt-woocommerce-packing-list-mpdf.php:83
+msgid "%1$s Download WooCommerce PDF Invoice by WebToffee %2$s"
+msgstr ""
+
+#. translators: 1$s: HTML anchor opening tag, 2$s: HTML anchor closing tag
+#: wt-woocommerce-packing-list-mpdf.php:86
+msgid "%1$s Download WebToffee WooCommerce Gift Cards %2$s"
+msgstr ""
+
+#. translators: 1$s: HTML anchor opening tag, 2$s: HTML anchor closing tag
+#: wt-woocommerce-packing-list-mpdf.php:89
+msgid "%1$s Download WebToffee WooCommerce Request a Quote %2$s"
+msgstr ""
+
+#. translators: 1$s: HTML anchor opening tag, 2$s: HTML anchor closing tag
+#: wt-woocommerce-packing-list-mpdf.php:92
+msgid "%1$s Download WooCommerce PDF Invoice Suite %2$s"
+msgstr ""

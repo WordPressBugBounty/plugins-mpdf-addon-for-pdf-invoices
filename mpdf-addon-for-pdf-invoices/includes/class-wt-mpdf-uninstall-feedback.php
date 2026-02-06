@@ -34,33 +34,34 @@ class Wt_Pklist_Mpdf_Uninstall_Feedback
         $reasons = array(
             array(
                 'id' => 'no-language-support',
-                'text' => __('Language support issues', 'mpdf-addon-for-woocommerce-pdf-invoices'),
+                'text' => __('Language support issues', 'mpdf-addon-for-pdf-invoices'),
                 'type' => 'text',
-                'placeholder' => __('Which language?', 'mpdf-addon-for-woocommerce-pdf-invoices')
+                'placeholder' => __('Which language?', 'mpdf-addon-for-pdf-invoices')
             ),
             array(
                 'id' => 'found-better-plugin',
-                'text' => __('I found a better plugin', 'mpdf-addon-for-woocommerce-pdf-invoices'),
+                'text' => __('I found a better plugin', 'mpdf-addon-for-pdf-invoices'),
                 'type' => 'text',
-                'placeholder' => __('Which plugin?', 'mpdf-addon-for-woocommerce-pdf-invoices')
+                'placeholder' => __('Which plugin?', 'mpdf-addon-for-pdf-invoices')
             ),
             array(
                 'id' => 'not-have-that-feature',
-                'text' => __('The plugin is great, but I need specific feature that you don\'t support', 'mpdf-addon-for-woocommerce-pdf-invoices'),
+                'text' => __('The plugin is great, but I need specific feature that you don\'t support', 'mpdf-addon-for-pdf-invoices'),
                 'type' => 'textarea',
-                'placeholder' => __('Could you tell us more about that feature?', 'mpdf-addon-for-woocommerce-pdf-invoices')
+                'placeholder' => __('Could you tell us more about that feature?', 'mpdf-addon-for-pdf-invoices')
             ),
             array(
                 'id' => 'did-not-work-as-expected',
-                'text' => __('Plugin does not work as expected.', 'mpdf-addon-for-woocommerce-pdf-invoices').' <span style="display:inline-block;"> '.sprintf(__('%sWooCommerce PDF Invoices by WebToffee%s plugin is already active.', 'mpdf-addon-for-woocommerce-pdf-invoices'), '<a href="https://wordpress.org/plugins/print-invoices-packing-slip-labels-for-woocommerce/" target="_blank">', '</a>').'</span>',
+                /* translators: 1$s: HTML anchor opening tag, 2$s: HTML anchor closing tag */
+                'text' => __('Plugin does not work as expected.', 'mpdf-addon-for-pdf-invoices').' <span style="display:inline-block;"> '.sprintf(esc_html__(' %1$s WooCommerce PDF Invoices by WebToffee %2$s plugin is already active.', 'mpdf-addon-for-pdf-invoices'), '<a href="https://wordpress.org/plugins/print-invoices-packing-slip-labels-for-woocommerce/" target="_blank">', '</a>').'</span>',
                 'type' => 'textarea',
-                'placeholder' => __('The mPDF plugin is strictly an add-on for the WooCommerce PDF Invoices by WebToffee plugin. Assuming that this plugin is also active, please share more info regarding the issue.', 'mpdf-addon-for-woocommerce-pdf-invoices')
+                'placeholder' => __('The mPDF plugin is strictly an add-on for the WooCommerce PDF Invoices by WebToffee plugin. Assuming that this plugin is also active, please share more info regarding the issue.', 'mpdf-addon-for-pdf-invoices')
             ),
             array(
                 'id' => 'other',
-                'text' => __('Other', 'mpdf-addon-for-woocommerce-pdf-invoices'),
+                'text' => __('Other', 'mpdf-addon-for-pdf-invoices'),
                 'type' => 'textarea',
-                'placeholder' => __('Could you tell us a bit more?', 'mpdf-addon-for-woocommerce-pdf-invoices')
+                'placeholder' => __('Could you tell us a bit more?', 'mpdf-addon-for-pdf-invoices')
             ),
         );
 
@@ -79,7 +80,7 @@ class Wt_Pklist_Mpdf_Uninstall_Feedback
         <div class="wtmpdf-modal" id="wtmpdf-wtmpdf-modal">
             <div class="wtmpdf-modal-wrap">
                 <div class="wtmpdf-modal-header">
-                    <h3><?php _e('If you have a moment, please let us know why you are deactivating:', 'mpdf-addon-for-woocommerce-pdf-invoices'); ?></h3>
+                    <h3><?php esc_html_e('If you have a moment, please let us know why you are deactivating:', 'mpdf-addon-for-pdf-invoices'); ?></h3>
                 </div>
                 <div class="wtmpdf-modal-body">
                     <ul class="reasons">
@@ -96,17 +97,17 @@ class Wt_Pklist_Mpdf_Uninstall_Feedback
                     </ul>
 
                     <div class="wt_pklist_policy_infobox">
-                        <?php _e("We do not collect any personal data when you submit this form. It's your feedback that we value.", "mpdf-addon-for-woocommerce-pdf-invoices");?>
-                        <a href="https://www.webtoffee.com/privacy-policy/" target="_blank"><?php _e('Privacy Policy', 'mpdf-addon-for-woocommerce-pdf-invoices');?></a>        
+                        <?php esc_html_e("We do not collect any personal data when you submit this form. It's your feedback that we value.", "mpdf-addon-for-pdf-invoices");?>
+                        <a href="https://www.webtoffee.com/privacy-policy/" target="_blank"><?php esc_html_e('Privacy Policy', 'mpdf-addon-for-pdf-invoices');?></a>        
                     </div>
                 </div>
                 <div class="wtmpdf-modal-footer">
                     <a class="button-primary" href="https://www.webtoffee.com/support/" target="_blank">
                         <span class="dashicons dashicons-external" style="margin-top:3px;"></span> 
-                        <?php _e('Go to support', 'mpdf-addon-for-woocommerce-pdf-invoices'); ?></a>
-                    <button class="button-primary wtmpdf-model-submit"><?php _e('Submit & Deactivate', 'mpdf-addon-for-woocommerce-pdf-invoices'); ?></button>
-                    <button class="button-secondary wtmpdf-model-cancel"><?php _e('Cancel', 'mpdf-addon-for-woocommerce-pdf-invoices'); ?></button>
-                    <a href="#" class="dont-bother-me"><?php _e('I rather wouldn\'t say', 'mpdf-addon-for-woocommerce-pdf-invoices'); ?></a>
+                        <?php esc_html_e('Go to support', 'mpdf-addon-for-pdf-invoices'); ?></a>
+                    <button class="button-primary wtmpdf-model-submit"><?php esc_html_e('Submit & Deactivate', 'mpdf-addon-for-pdf-invoices'); ?></button>
+                    <button class="button-secondary wtmpdf-model-cancel"><?php esc_html_e('Cancel', 'mpdf-addon-for-pdf-invoices'); ?></button>
+                    <a href="#" class="dont-bother-me"><?php esc_html_e('I rather wouldn\'t say', 'mpdf-addon-for-pdf-invoices'); ?></a>
                 </div>
             </div>
         </div>
@@ -238,7 +239,7 @@ class Wt_Pklist_Mpdf_Uninstall_Feedback
                             type: 'POST',
                             data: {
                                 action: 'wtmpdf_submit_uninstall_reason',
-                                _wpnonce: '<?php echo wp_create_nonce(WT_PKLIST_MPDF_PLUGIN_NAME);?>',
+                                _wpnonce: '<?php echo esc_js(wp_create_nonce(WT_PKLIST_MPDF_PLUGIN_NAME));?>',
                                 reason_id: reason_id,
                                 reason_info: reason_info
                             },
@@ -260,7 +261,7 @@ class Wt_Pklist_Mpdf_Uninstall_Feedback
     public function send_uninstall_reason()
     {
         global $wpdb;
-        $nonce=isset($_POST['_wpnonce']) ? sanitize_text_field($_POST['_wpnonce']) : ''; 
+        $nonce=isset($_POST['_wpnonce']) ? sanitize_text_field(wp_unslash($_POST['_wpnonce'])) : ''; 
         if(!(wp_verify_nonce($nonce,WT_PKLIST_MPDF_PLUGIN_NAME)))
         {   
             wp_send_json_error();
@@ -271,14 +272,14 @@ class Wt_Pklist_Mpdf_Uninstall_Feedback
         }
         //$current_user = wp_get_current_user();
         $data = array(
-            'reason_id'         => sanitize_text_field($_POST['reason_id']),
+            'reason_id'         => sanitize_text_field(wp_unslash($_POST['reason_id'])),
             'plugin'            => $this->plugin_id,
             'auth'              => $this->auth_key,
             'date'              => gmdate("M d, Y h:i:s A"),
             'url'               => '',
             'user_email'        => '',
-            'reason_info'       => isset($_REQUEST['reason_info']) ? trim(stripslashes(sanitize_text_field($_REQUEST['reason_info']))) : '',
-            'software'          => $_SERVER['SERVER_SOFTWARE'],
+            'reason_info'       => isset($_REQUEST['reason_info']) ? trim(stripslashes(sanitize_text_field(wp_unslash($_REQUEST['reason_info'])))) : '',
+            'software'          => isset($_SERVER['SERVER_SOFTWARE']) ? sanitize_text_field(wp_unslash($_SERVER['SERVER_SOFTWARE'])) : '',
             'php_version'       => phpversion(),
             'mysql_version'     => $wpdb->db_version(),
             'wp_version'        => get_bloginfo('version'),

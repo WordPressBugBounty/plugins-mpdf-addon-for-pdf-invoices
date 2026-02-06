@@ -9042,7 +9042,7 @@ class Mpdf implements \Psr\Log\LoggerAwareInterface
 
 	function _getObjAttr($t)
 	{
-		$c = explode("\xbb\xa4\xac", $t, 2);
+		$c = explode("\xbb\xa4\xac", $t, 3); //https://github.com/mpdf/mpdf/issues/1895
 		$c = explode(",", $c[1], 2);
 		foreach ($c as $v) {
 			$v = explode("=", $v, 2);
@@ -15241,7 +15241,8 @@ class Mpdf implements \Psr\Log\LoggerAwareInterface
 		}
 		$this->ResetMargins();
 		$this->pageoutput[$this->page] = [];
-		$this->y = (($end * 1000) % 1000000) / 1000; // mod changes operands to integers before processing
+		$end = (float) $end;
+		$this->y = fmod(($end * 1000.0) , 1000000.0) / 1000.0; // mod changes operands to integers before processing
 	}
 
 	// Added mPDF 3.0 Float DIV
