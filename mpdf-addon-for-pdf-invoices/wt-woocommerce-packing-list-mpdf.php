@@ -11,14 +11,14 @@
  * Plugin URI:        https://wordpress.org/plugins/mpdf-addon-for-pdf-invoices/
  * Requires Plugins:  woocommerce
  * Description:       mPDF add-on for WooCommerce PDF Invoices, Packing Slips, Delivery Notes & Shipping Labels
- * Version:           1.2.7
+ * Version:           1.2.8
  * Author:            WebToffee
  * Author URI:        https://www.webtoffee.com/
  * License:           GPL-3.0+
  * License URI:       http://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain:       mpdf-addon-for-pdf-invoices
  * Domain Path:       /languages
- * WC tested up to:   10.3.5
+ * WC tested up to:   10.5.3
  */
 
 // If this file is called directly, abort.
@@ -121,7 +121,7 @@ if(!defined('WT_PKLIST_MPDF_VERSION')) //check plugin file already included
     /**
      * Currently plugin version.
      */
-    define( 'WT_PKLIST_MPDF_VERSION', '1.2.7' );
+    define( 'WT_PKLIST_MPDF_VERSION', '1.2.8' );
 }else
 {
 	return;
@@ -320,13 +320,16 @@ if(!class_exists('Wt_Pklist_Mpdf_Addon'))
 					$product_table_body_style=$product_table_body_elm->style;
 					if($product_table_body_style)
 					{	
-						$product_table_body_elm_children=$product_table_body_elm->children(0)->children();
-						if ( $product_table_body_elm_children ) {
-							foreach($product_table_body_elm_children as $td_elm)
-							{
-								if( 'td' === $td_elm->tag )
+						$first_child = $product_table_body_elm->children(0);
+						if($first_child) {
+							$product_table_body_elm_children=$first_child->children();
+							if ( $product_table_body_elm_children ) {
+								foreach($product_table_body_elm_children as $td_elm)
 								{
-									$td_elm->style=$product_table_body_style;
+									if( 'td' === $td_elm->tag )
+									{
+										$td_elm->style=$product_table_body_style;
+									}
 								}
 							}
 						}

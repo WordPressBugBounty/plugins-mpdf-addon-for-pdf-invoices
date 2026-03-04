@@ -1,11 +1,11 @@
 === mPDF add-on for RTL and Unicode Support ===
 Contributors: WebToffee
-Version: 1.2.7
+Version: 1.2.8
 Donate link: https://www.webtoffee.com/plugins/
 Tags: woocommerce invoice, pdf invoice, mpdf, gift card, rtl support
 Requires at least: 3.0.1
 Tested up to: 6.9
-Stable tag: 1.2.7
+Stable tag: 1.2.8
 Requires PHP: 5.6 
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -15,11 +15,11 @@ RTL and Unicode support add-on for WebToffee WooCommerce Gift Cards, WebToffee W
 == Description ==
 <pre>
 <strong>NOTE: </strong>
-This plugin is an add-on for <a href="https://wordpress.org/plugins/print-invoices-packing-slip-labels-for-woocommerce/">WooCommerce PDF Invoices, Packing Slips, Delivery Notes and Shipping Labels plugin</a> , <a href="https://www.webtoffee.com/product/woocommerce-gift-cards/">WebToffee WooCommerce Gift Cards plugin</a> and <a href="https://www.webtoffee.com/product/woocommerce-request-a-quote/">WebToffee WooCommerce Request a Quote plugin</a>.
+This plugin is an add-on for <a href="https://wordpress.org/plugins/print-invoices-packing-slip-labels-for-woocommerce/">WooCommerce PDF Invoices, Packing Slips, Delivery Notes and Shipping Labels plugin</a> , <a href="https://www.webtoffee.com/product/woocommerce-gift-cards/">WebToffee WooCommerce Gift Cards plugin</a>, <a href="https://woocommerce.com/products/wt-pdf-invoices-suite/">WooCommerce PDF Invoice</a> and <a href="https://www.webtoffee.com/product/woocommerce-request-a-quote/">WebToffee WooCommerce Request a Quote plugin</a>.
 </pre>
 
 = Introduction =
-mPDF addon is an extension for [WebToffee WooCommerce Gift Cards](https://www.webtoffee.com/product/woocommerce-gift-cards/), [WebToffee WooCommerce Request a Quote](https://www.webtoffee.com/product/woocommerce-request-a-quote/) and [WooCommerce PDF invoices, Packing Slips, Delivery Notes & Shipping labels plugin](https://wordpress.org/plugins/print-invoices-packing-slip-labels-for-woocommerce/).
+mPDF addon is an extension for [WebToffee WooCommerce Gift Cards](https://www.webtoffee.com/product/woocommerce-gift-cards/), [WooCommerce PDF Invoice](https://woocommerce.com/products/wt-pdf-invoices-suite/), [WebToffee WooCommerce Request a Quote](https://www.webtoffee.com/product/woocommerce-request-a-quote/) and [WooCommerce PDF invoices, Packing Slips, Delivery Notes & Shipping labels plugin](https://wordpress.org/plugins/print-invoices-packing-slip-labels-for-woocommerce/).
 
 This plugin replaces dompdf with another library that supports RTL and all other Unicode languages including Hebrew and Arabic adding a better RTL integration for PDF documents. It is equipped to handle almost 12 RTL languages including most Asian languages. The plugin also can be used with the WebToffee WooCommerce Gift Cards plugin to create gift cards in PDF format.
 
@@ -30,7 +30,7 @@ This plugin replaces dompdf with another library that supports RTL and all other
 * Seamless integration with the WebToffee WooCommerce Gift cards, WebToffee WooCommerce Request a Quote and WooCommerce PDF Invoices, Packing Slips, Delivery Notes & Shipping Labels plugin by WebToffee
 * Facilitates easy print, download, and attachment provisions.
 
-&#9989; Tested OK with WooCommerce 10.3.5
+&#9989; Tested OK with WooCommerce 10.5.3
 
 == Why do you need the mPDF add-on? ==
 The PDF converter library that we use (dompdf) in [WooCommerce PDF Invoice, Packings Slips, Delivery Notes & Shipping Labels](https://wordpress.org/plugins/print-invoices-packing-slip-labels-for-woocommerce/) plugin provides only partial support for RTL. In addition to this, Hebrew and Arabic characters are not supported by the font (Open Sans) that is used in the pre-defined templates. 
@@ -92,6 +92,10 @@ Note:
 
 
 == Change log ==
+
+= 1.2.8 2026-03-04 =
+[Fix] - Fixed runtime error during product table rendering caused by invalid element handling.
+[Compatibility] - Tested OK with WooCommerce 10.5.3
 
 = 1.2.7 2025-11-24 =
 [Compatibility] - Add support for [All-in-one PDF Invoice and Packing Slips Suite](https://woocommerce.com/products/wt-pdf-invoices-suite/)
@@ -187,7 +191,6 @@ Note:
  
 == Upgrade Notice ==
 
-= 1.2.7 =
-[Compatibility] - Add support for [All-in-one PDF Invoice and Packing Slips Suite](https://woocommerce.com/products/wt-pdf-invoices-suite/)
-[Compatibility] - Tested OK with WooCommerce 10.3.5
-[Compatibility] - Tested OK with WordPress 6.9
+= 1.2.8 =
+[Fix] - Fixed runtime error during product table rendering caused by invalid element handling.
+[Compatibility] - Tested OK with WooCommerce 10.5.3
