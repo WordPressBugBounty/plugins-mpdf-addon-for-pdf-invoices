@@ -1,6 +1,10 @@
 <?php
 namespace Wt_Pklist_Mpdf_Addon;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Website: http://sourceforge.net/projects/simplehtmldom/
  * Additional projects: http://sourceforge.net/projects/debugobject/
@@ -75,10 +79,12 @@ if ( !defined( 'HDOM_INFO_ENDSPACE' ) ) {
 	define('HDOM_INFO_ENDSPACE', 7); 
 }
 
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedConstantFound -- Third-party library (Simple HTML DOM Parser); upstream constant names preserved.
 defined('DEFAULT_TARGET_CHARSET') || define('DEFAULT_TARGET_CHARSET', 'UTF-8');
 defined('DEFAULT_BR_TEXT') || define('DEFAULT_BR_TEXT', "\r\n");
 defined('DEFAULT_SPAN_TEXT') || define('DEFAULT_SPAN_TEXT', ' ');
 defined('MAX_FILE_SIZE') || define('MAX_FILE_SIZE', 600000);
+// phpcs:enable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedConstantFound
 if ( !defined( 'HDOM_SMARTY_AS_TEXT' ) ) { 
 	define('HDOM_SMARTY_AS_TEXT', 1); 
 }

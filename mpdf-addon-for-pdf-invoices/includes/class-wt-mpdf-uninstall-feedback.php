@@ -261,9 +261,13 @@ class Wt_Pklist_Mpdf_Uninstall_Feedback
     public function send_uninstall_reason()
     {
         global $wpdb;
-        $nonce=isset($_POST['_wpnonce']) ? sanitize_text_field(wp_unslash($_POST['_wpnonce'])) : ''; 
+        $nonce=isset($_POST['_wpnonce']) ? sanitize_text_field(wp_unslash($_POST['_wpnonce'])) : '';
         if(!(wp_verify_nonce($nonce,WT_PKLIST_MPDF_PLUGIN_NAME)))
-        {   
+        {
+            wp_send_json_error();
+        }
+        if(!current_user_can('activate_plugins'))
+        {
             wp_send_json_error();
         }
         if(!isset($_POST['reason_id']))

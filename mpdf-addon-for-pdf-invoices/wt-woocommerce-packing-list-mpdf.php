@@ -11,14 +11,14 @@
  * Plugin URI:        https://wordpress.org/plugins/mpdf-addon-for-pdf-invoices/
  * Requires Plugins:  woocommerce
  * Description:       mPDF add-on for WooCommerce PDF Invoices, Packing Slips, Delivery Notes & Shipping Labels
- * Version:           1.2.8
+ * Version:           1.2.9
  * Author:            WebToffee
  * Author URI:        https://www.webtoffee.com/
  * License:           GPL-3.0+
  * License URI:       http://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain:       mpdf-addon-for-pdf-invoices
  * Domain Path:       /languages
- * WC tested up to:   10.5.3
+ * WC tested up to:   10.7.0
  */
 
 // If this file is called directly, abort.
@@ -44,7 +44,7 @@ add_action(
 if(!function_exists('activate_wt_woocommerce_packing_list_mpdf'))
 {
 	register_activation_hook( __FILE__, 'activate_wt_woocommerce_packing_list_mpdf' );
-	function activate_wt_woocommerce_packing_list_mpdf()
+	function activate_wt_woocommerce_packing_list_mpdf() // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedFunctionFound
 	{
 		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
@@ -121,7 +121,7 @@ if(!defined('WT_PKLIST_MPDF_VERSION')) //check plugin file already included
     /**
      * Currently plugin version.
      */
-    define( 'WT_PKLIST_MPDF_VERSION', '1.2.8' );
+    define( 'WT_PKLIST_MPDF_VERSION', '1.2.9' );
 }else
 {
 	return;
