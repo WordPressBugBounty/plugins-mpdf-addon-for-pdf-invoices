@@ -1,11 +1,11 @@
 === mPDF add-on for RTL and Unicode Support ===
 Contributors: WebToffee
-Version: 1.2.9
+Version: 1.3.0
 Donate link: https://www.webtoffee.com/plugins/
 Tags: woocommerce invoice, pdf invoice, mpdf, gift card, rtl support
-Requires at least: 3.0.1
-Tested up to: 7.0
-Stable tag: 1.2.9
+Requires at least: 6.0
+Tested up to: 7.1
+Stable tag: 1.3.0
 Requires PHP: 5.6 
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -30,7 +30,7 @@ This plugin replaces dompdf with another library that supports RTL and all other
 * Seamless integration with the WebToffee WooCommerce Gift cards, WebToffee WooCommerce Request a Quote and WooCommerce PDF Invoices, Packing Slips, Delivery Notes & Shipping Labels plugin by WebToffee
 * Facilitates easy print, download, and attachment provisions.
 
-&#9989; Tested OK with WooCommerce 10.7.0
+&#9989; Tested OK with WooCommerce 11.1.0
 
 == Why do you need the mPDF add-on? ==
 The PDF converter library that we use (dompdf) in [WooCommerce PDF Invoice, Packings Slips, Delivery Notes & Shipping Labels](https://wordpress.org/plugins/print-invoices-packing-slip-labels-for-woocommerce/) plugin provides only partial support for RTL. In addition to this, Hebrew and Arabic characters are not supported by the font (Open Sans) that is used in the pre-defined templates. 
@@ -92,6 +92,10 @@ Note:
 
 
 == Change log ==
+
+= 1.3.0 2026-09-03 =
+[Compatibility] - Tested OK with WooCommerce 11.1.0
+[Compatibility] - Tested OK with WordPress 7.1
 
 = 1.2.9 2026-05-21 =
 [Compatibility] - Tested OK with WooCommerce 10.7.0
@@ -195,6 +199,6 @@ Note:
  
 == Upgrade Notice ==
 
-= 1.2.9 =
-[Compatibility] - Tested OK with WooCommerce 10.7.0
-[Compatibility] - Tested OK with WordPress 7.0
+= 1.3.0 =
+[Compatibility] - Tested OK with WooCommerce 11.1.0
+[Compatibility] - Tested OK with WordPress 7.1
